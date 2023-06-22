@@ -24,10 +24,6 @@ resource "aws_security_group" "main" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  lifecycle {
-    ignore_changes = [ingress]
-  }
-
   tags = {
     Name        = "${var.tenant}-${var.name}-amazonmq-${var.mq_name}-sg-${var.environment}"
     Tenant      = var.tenant
