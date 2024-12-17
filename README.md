@@ -5,7 +5,7 @@ Magicorn made Terraform Module for AWS Provider
 ```
 module "amazonmq" {
   source         = "magicorntech/amazonmq/aws"
-  version        = "0.0.1"
+  version        = "0.0.2"
   tenant         = var.tenant
   name           = var.name
   environment    = var.environment
@@ -13,6 +13,7 @@ module "amazonmq" {
   cidr_block     = var.cidr_block
   subnet_ids     = var.subnet_ids
   kms_key_id     = var.mq_key_id
+  additional_ips = ["10.10.0.0/16", "172.31.0.0/16"] # should be set empty []
 
   # Amazon MQ Configuration
   mq_name                    = "master"
